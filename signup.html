@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <header>
+                <h1>KIET CONNECT</h1>
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">Join</a>
+                </nav>
+            </header>
+            <section class="form-content">
+                <h2>Create new account.</h2>
+                <p>Already A Member? <a id="login" href="#">Log In</a></p>
+                <p id="error-message" style="color: red; display: none;">Invalid username or password.</p>
+                <form id="form1" action="#">
+                    <div class="input-group">
+                        <input type="text" placeholder="First name">
+                        <input type="text" placeholder="Last name">
+                    </div>
+                    <input id="email" type="email" placeholder="Email">
+                    <input id="password" type="password" placeholder="Password">
+
+                    <div class="button-group">
+                        <button type="button">Change method</button>
+                        <button type="submit" class="create-account-btn">Create account</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+    <script src="signup.js"></script>
+</body>
+</html>

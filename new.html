@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIET Clubs - Explore & Join</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      
+        body, h1, h2, h3, p, ul, table {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5; 
+            color: #333; 
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2F3B6C; 
+            color: white;
+            padding: 3rem;
+            text-align: center;
+            background-image: url('images/header-bg-tech.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        header h1 {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #F5B800; 
+        }
+
+        section {
+            padding: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        h2, h3 {
+            color: #333; 
+            text-align: center;
+            margin-bottom: 1rem;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        footer {
+            background-color: #2F3B6C; 
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #e0e0e0; 
+        }
+
+        th {
+            background-color: #F5B800; 
+            color: #333; 
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        td {
+            background-color: #fafafa;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+
+        tr:hover {
+            background-color: #bdbdbd;
+        }
+
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #f8f8f8; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tabs button {
+            background-color: #2F3B6C; 
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 10px 10px 0 0;
+            transition: background-color 0.3s, transform 0.2s;
+            text-align: center;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .tabs button:hover {
+            background-color: #F5B800; 
+            transform: scale(1.05); 
+        }
+
+        .tabs button.active {
+            background-color: #F5B800; 
+            border-bottom: 2px solid #fff;
+        }
+
+        .tabs-content {
+            display: none;
+        }
+
+        .active-tab {
+            display: block;
+        }
+
+        .tab-info {
+            background-color: #fafafa;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .club-title {
+            font-size: 1.5rem;
+            color: #333; 
+            text-decoration: underline;
+            cursor: pointer;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .club-info {
+            display: none;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .club-info ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .club-info ul li {
+            margin: 8px 0;
+        }
+
+        .club-info p {
+            font-weight: bold;
+        }
+
+        .club-section {
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #f1f1f1;
+            margin-bottom: 2rem;
+        }
+
+        .club-button {
+            background-color: #2F3B6C; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .club-button:hover {
+            background-color: #F5B800;
+        }
+
+        .tech-bg {
+            background-image: url('images/tech-pattern.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .non-tech-bg {
+            background-image: url('images/non-tech-pattern.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+  
+    <header>
+        <h1>KIET Clubs</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#clubs-list">Club List</a></li>
+                <li><a href="#club-info">Club Info</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <section id="home" class="tech-bg">
+        <h2>Welcome to KIET Clubs</h2>
+        <p>Explore, join, and grow with our vibrant community of clubs at KIET. From technology to arts, we have something for everyone.</p>
+    </section>
+
+   
+    <section id="clubs-list" class="non-tech-bg">
+        <h2>List of Clubs</h2>
+
+        <div class="tabs">
+            <button onclick="showTab('tech')" class="active">Tech Clubs</button>
+            <button onclick="showTab('non-tech')">Non-Tech Clubs</button>
+        </div>
+
+        <div id="tech" class="tabs-content active-tab">
+            <h3>Tech Clubs</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Club Name</th>
+                        <th>Description</th>
+                        <th>More Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>E-Cell</td>
+                        <td>Entrepreneurship cell for fostering startups</td>
+                        <td><button class="club-button" onclick="toggleInfo('e-cell-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>DSDL</td>
+                        <td>Data Science and Deep Learning workshops</td>
+                        <td><button class="club-button" onclick="toggleInfo('dsdl-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>InnoGeeks</td>
+                        <td>Innovative coding challenges and projects</td>
+                        <td><button class="club-button" onclick="toggleInfo('innogeeks-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>Technocrats</td>
+                        <td>Leading technology club for aspiring engineers</td>
+                        <td><button class="club-button" onclick="toggleInfo('technocrats-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>Dev Up</td>
+                        <td>For developers passionate about programming</td>
+                        <td><button class="club-button" onclick="toggleInfo('devup-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>GDG</td>
+                        <td>Google Developer Group</td>
+                        <td><button class="club-button" onclick="toggleInfo('gdc-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>School of AIML</td>
+                        <td>Artificial Intelligence and Machine Learning</td>
+                        <td><button class="club-button" onclick="toggleInfo('aiml-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>School of UI/UX</td>
+                        <td>User Interface and User Experience design</td>
+                        <td><button class="club-button" onclick="toggleInfo('uiux-info')">Know More</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="non-tech" class="tabs-content">
+            <h3>Non-Tech Clubs</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Club Name</th>
+                        <th>Description</th>
+                        <th>More Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kiet Music Club</td>
+                        <td>For music lovers and artists</td>
+                        <td><button class="club-button" onclick="toggleInfo('music-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>Phoenix Dance Club</td>
+                        <td>Dynamic dance moves and choreography</td>
+                        <td><button class="club-button" onclick="toggleInfo('phoenix-dance-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>Steppers Dance Club</td>
+                        <td>Step and groove dance forms</td>
+                        <td><button class="club-button" onclick="toggleInfo('steppers-dance-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>Kavyanjali</td>
+                        <td>Poetry, literature and creative writing</td>
+                        <td><button class="club-button" onclick="toggleInfo('kavyanjali-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>Creative Cell</td>
+                        <td>Encouraging creativity and artistic expression</td>
+                        <td><button class="club-button" onclick="toggleInfo('creative-cell-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>Pragramatic Fashion Club</td>
+                        <td>For fashion lovers and designers</td>
+                        <td><button class="club-button" onclick="toggleInfo('fashion-info')">Know More</button></td>
+                    </tr>
+                    <tr>
+                        <td>Photography Club</td>
+                        <td>Exploring photography and visual arts</td>
+                        <td><button class="club-button" onclick="toggleInfo('photography-info')">Know More</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+   
+    <section id="club-info">
+        <h2>Club Information</h2>
+
+      
+        <div id="e-cell-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Workshops on business strategies and startup development</li>
+                <li>Guest lectures from industry experts</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Organized Startup Hackathons with top investors</li>
+                <li>Successfully incubated 5 startups</li>
+            </ul>
+            <p>Timings: Monday - Friday, 4:00 PM to 6:00 PM</p>
+        </div>
+
+        <div id="dsdl-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Focus on data science techniques and machine learning</li>
+                <li>Hands-on experience with real-world data sets</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Team participated in Data Science Olympiad</li>
+                <li>Winner of AI for Good Challenge 2023</li>
+            </ul>
+            <p>Timings: Tuesday & Thursday, 3:00 PM to 5:00 PM</p>
+        </div>
+
+        <div id="innogeeks-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Innovative coding challenges and project-based learning</li>
+                <li>Workshops on tech stacks and programming languages</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Hosted 10+ hackathons with international participation</li>
+                <li>Collaborated with leading tech firms for research</li>
+            </ul>
+            <p>Timings: Monday & Wednesday, 5:00 PM to 7:00 PM</p>
+        </div>
+
+        <div id="technocrats-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Hosting tech conferences and workshops</li>
+                <li>Hands-on projects with real-world applications</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Organized National-level Hackathons</li>
+                <li>Collaborated with leading tech companies</li>
+            </ul>
+            <p>Timings: Monday, Wednesday, Friday 6:00 PM to 8:00 PM</p>
+        </div>
+
+        <div id="devup-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Focus on practical development skills and languages</li>
+                <li>Workshops on building web and mobile apps</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Top performer in Dev Challenge 2023</li>
+                <li>Developed multiple apps for NGOs</li>
+            </ul>
+            <p>Timings: Tuesday & Thursday, 4:00 PM to 6:00 PM</p>
+        </div>
+
+        <div id="gdc-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Focus on game development and programming</li>
+                <li>Collaborations with gaming communities</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Created award-winning games</li>
+                <li>Recognized in International Gaming Festivals</li>
+            </ul>
+            <p>Timings: Monday & Wednesday, 4:00 PM to 6:00 PM</p>
+        </div>
+
+        <div id="aiml-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Advanced learning in AI, ML, and Deep Learning</li>
+                <li>Projects and real-world data handling</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Winner of National AI Hackathon 2023</li>
+                <li>Published research papers on ML models</li>
+            </ul>
+            <p>Timings: Monday & Friday, 5:00 PM to 7:00 PM</p>
+        </div>
+
+        <div id="uiux-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Learn UI/UX design principles and tools</li>
+                <li>Hands-on projects for creating websites and apps</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Created designs for multiple university projects</li>
+                <li>Won design awards at National UI/UX event</li>
+            </ul>
+            <p>Timings: Tuesday & Thursday, 3:00 PM to 5:00 PM</p>
+        </div>
+
+       
+        <div id="music-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Regular music workshops and jamming sessions</li>
+                <li>Organizing inter-college music events</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>1st Prize in National Music Festival 2023</li>
+                <li>Performed at International Music Conference</li>
+            </ul>
+            <p>Timings: Monday, Wednesday, and Friday, 4:00 PM to 6:00 PM</p>
+        </div>
+
+        <div id="phoenix-dance-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Hip hop, contemporary dance styles</li>
+                <li>Training sessions and professional choreography</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Winner of KIET Dance Championship 2023</li>
+                <li>Performed at multiple National and Regional Competitions</li>
+            </ul>
+            <p>Timings: Tuesday & Thursday, 5:00 PM to 7:00 PM</p>
+        </div>
+
+        <div id="steppers-dance-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Focus on steps and groove-based choreography</li>
+                <li>Open to all dance styles</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Participated in Regional Dance Competitions</li>
+                <li>Winning Dance Crew in KIET's Cultural Events</li>
+            </ul>
+            <p>Timings: Monday & Friday, 6:00 PM to 8:00 PM</p>
+        </div>
+
+        <div id="kavyanjali-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Creative writing workshops and events</li>
+                <li>Poetry slams and literary fests</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Winner of KIET Poetry Slam 2023</li>
+                <li>Published Poems in National Anthologies</li>
+            </ul>
+            <p>Timings: Tuesday & Thursday, 4:00 PM to 6:00 PM</p>
+        </div>
+
+        <div id="creative-cell-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Encouraging creative expressions through arts</li>
+                <li>Organizing painting and sculpture exhibitions</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Exhibited at National Art Show</li>
+                <li>Winner of National Art Competitions</li>
+            </ul>
+            <p>Timings: Monday, Wednesday, and Friday, 3:00 PM to 5:00 PM</p>
+        </div>
+
+        <div id="fashion-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Fashion designing workshops</li>
+                <li>Collaborating with designers for fashion shows</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>Hosted KIET Fashion Week 2023</li>
+                <li>Collaboration with designers for runway events</li>
+            </ul>
+            <p>Timings: Monday & Wednesday, 4:00 PM to 6:00 PM</p>
+        </div>
+
+        <div id="photography-info" class="club-info tab-info">
+            <p>Key Features:</p>
+            <ul>
+                <li>Workshops on photography techniques</li>
+                <li>Excursions for photo shoots</li>
+            </ul>
+            <p>Achievements:</p>
+            <ul>
+                <li>1st Prize in National Photography Competition</li>
+                <li>Organized National-Level Photography Exhibition</li>
+            </ul>
+            <p>Timings: Tuesday & Thursday, 5:00 PM to 7:00 PM</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>KIET College Clubs - All Rights Reserved &copy; 2024</p>
+    </footer>
+
+    <script>
+       
+        function showTab(tabName) {
+            const techTab = document.getElementById('tech');
+            const nonTechTab = document.getElementById('non-tech');
+            const techButton = document.querySelector('.tabs button:nth-child(1)');
+            const nonTechButton = document.querySelector('.tabs button:nth-child(2)');
+            
+            if (tabName === 'tech') {
+                techTab.classList.add('active-tab');
+                nonTechTab.classList.remove('active-tab');
+                techButton.classList.add('active');
+                nonTechButton.classList.remove('active');
+            } else {
+                nonTechTab.classList.add('active-tab');
+                techTab.classList.remove('active-tab');
+                nonTechButton.classList.add('active');
+                techButton.classList.remove('active');
+            }
+        }
+        function toggleInfo(infoId) {
+            const clubInfo = document.getElementById(infoId);
+            clubInfo.style.display = clubInfo.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
