@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorMessage = document.getElementById("error-message");
 
   
-    const validEmail = "123";
+    const validEmail = "123@gmail.com";
     const validPassword = "1";
 
     form.addEventListener("submit", function (event) {
