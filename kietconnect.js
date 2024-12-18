@@ -1,5 +1,5 @@
 const USERNAME = "admin";
-const PASSWORD = "1"; //password badalna ho tho badal liyo 
+const PASSWORD = "1"; //password badalna ho tho badal lena
 
 function promptForPassword(action) {
     const password = prompt("Please enter your password:");
@@ -41,9 +41,9 @@ function addEvent() {
 }
 
 function deleteEvent(button) {
-    const eventToDelete = button.parentElement; // Get the parent element (the event article) (english op)     
+    const eventToDelete = button.parentElement;    
     if (confirm("Are you sure you want to delete this event?")) {
-        eventToDelete.remove(); // to remove the event
+        eventToDelete.remove(); 
         alert("Event deleted successfully.");
     }
 }
@@ -76,9 +76,9 @@ function addClub() {
 }
 
 function deleteActivity(button) {
-    const activityToDelete = button.parentElement; // Get the parent element (the activity article)
+    const activityToDelete = button.parentElement; 
     if (confirm("Are you sure you want to delete this activity?")) {
-        activityToDelete.remove(); // Remove the activity
+        activityToDelete.remove(); 
         alert("Activity deleted successfully.");
     }
 }
